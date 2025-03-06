@@ -90,6 +90,7 @@
             <div class="tab" onclick="showTab('gameplay')">Gameplay</div>
             <div class="tab" onclick="showTab('roadmap')">Roadmap</div>
             <div class="tab" onclick="showTab('community')">Community</div>
+			<div class="tab" onclick="showTab('beforejoining')">BeforeJoining</div>
         </div>
         
         <div id="info" class="content active">
@@ -158,19 +159,26 @@
             <h3>Financial Support</h3>
             <p>There is no financial support option yet, but it may be introduced after a working demo is available.</p>
         </div>
+		
+		<div id="beforejoining" class="content">
+			<h2>Before you Join!</h2>
+			<h3>Volunteer Project Notice</h3>
+			<p>This is a volunteer-driven project. At this stage, there is no financial compensation. Join only if you’re passionate about AI-driven game development.</p>
+			<p>You are very welcome to join, contribute, or simply stay updated on our progress. I hope you enjoy being part of this journey with us!</p>
+		</div>
     </div>
 
     <script>
-        function showTab(tabId) {
-            document.querySelectorAll('.content').forEach(content => {
-                content.classList.remove('active');
-            });
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            document.getElementById(tabId).classList.add('active');
-            event.target.classList.add('active');
-        }
+		function showTab(tabId) {
+			document.querySelectorAll('.content').forEach(content => {
+				content.classList.remove('active');
+			});
+			document.querySelectorAll('.tab').forEach(tab => {
+				tab.classList.remove('active');
+			});
+			document.getElementById(tabId).classList.add('active');
+			this.classList.add('active'); // Fixes highlighting bug
+		}
     </script>
 </body>
 </html>
